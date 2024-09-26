@@ -103,6 +103,45 @@ class Produit2 extends QuestionFraction {
 	}
 }
 
+class Produit3 extends QuestionFraction {
+	// produit d'un entier avec une fraction
+	// a x b/d
+	constructor() {
+        super()
+		while (!this.a || PGCD(this.b,this.d)>1 || this.numerateur%this.denominateur == 0) {
+            this.a = randInt(2, 9)
+            this.b = randInt(1, 9)
+            this.d = randInt(2, 9)
+            this.numerateur = this.a*this.b
+            this.denominateur = this.d
+		}
+	}
+	
+	htmlQuestion() {
+	    // html correspondant à l'intitulé de la question
+		const haut = `<input type="number" name="${this.inputHautID}">`
+		const bas = `<input type="number" name="${this.inputBasID}">`
+        return `<math display="block"><mrow>
+                    <mn>${this.a}</mn>
+                    <mo>&times;</mo>
+                    <mfrac>
+                        <mn>${this.b}</mn>
+                        <mn>${this.d}</mn>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow><mn>${haut}</mn></mrow>
+                        <mrow><mn>${bas}</mn></mrow>
+                    </mfrac>
+                </mrow></frac>`
+	}
+	
+	htmlCorrection() {
+	    // html correspondant à l'intitulé de la correction
+	    return "Correction à venir"
+	}
+}
+
 
 
 if (typeof module != 'undefined') { module.exports = {Somme1} }
