@@ -1,0 +1,51 @@
+function randInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+}
+
+class Question {
+	constructor(idForm) {
+		this.a = randInt(1,6)
+		this.b = randInt(1,6)
+	}
+	
+	formater_reponse_client(container) {
+	    // formate la réponse côté client (entrainement seulement)
+	    const reponse = {
+	        rep : container.reponse.value
+	    }
+	    return reponse
+	}
+	
+	verifier(reponse) {
+        // vérifier si la réponse donnée (formaté dans un objet ayant pour attribut `rep`) est bonne
+	    if (reponse.rep == this.a + this.b) {
+	        return {verdict: true, message: "Vrai"}
+	    }
+		return {verdict: false, message: "Faux"}
+	}
+	
+	placerQuestion(container) {
+	    // place l'intitulé de la question et le(s) input(s) dans l'element `container`.
+		const span = document.createElement("span")
+		span.textContent = `${this.a} + ${this.b} = ?`
+		const input = document.createElement("input")
+		input.type = "number"
+		container.appendChild(span)
+		container.appendChild(input)
+		container.reponse = input
+	}
+	
+	placerCorrection(container) {
+	    // place la correction dans l'element `container`.
+		const p = document.createElement("p")
+		p.textContent = `${this.a} + ${this.b} = ${this.a+this.b}`
+		p.className = "correction"
+		container.appendChild(p)
+	}
+}
+
+if (module) {
+    module.exports = {Question}
+}
