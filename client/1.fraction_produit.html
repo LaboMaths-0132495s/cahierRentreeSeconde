@@ -53,6 +53,27 @@
 					})
 				</script>
 			</fieldset>
+			<fieldset>
+				<legend>Question 3</legend>
+				<form name="question3" id="question3"></form>
+				<script>
+					const F3 = document.getElementById("question3")
+					const Q3 = new Produit3();
+					F3.innerHTML = '<div>' + Q3.htmlQuestion() + '</div>'
+						+ '<div><input type="submit" value="Vérifier"/><span class="verification" id="verdict3"></span></div>'
+						+ '<div><input type="button" value="Correction" id="button3"></div>'
+					F3.addEventListener("submit", event => {
+						event.preventDefault()
+						const span = document.getElementById("verdict3")
+						const verifier = Q3.verifier(Q3.formater_reponse_client())
+						span.textContent = verifier.message
+					})
+					document.getElementById("button3").addEventListener("click", event => {
+						const div = event.target.parentNode
+						div.innerHTML = Q3.htmlCorrection()
+					})
+				</script>
+			</fieldset>
 		</div>
     </body>
 </html>
