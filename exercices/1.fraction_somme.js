@@ -31,7 +31,7 @@ class Somme1 {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {
@@ -82,7 +82,7 @@ class Somme1 {
                 <mn>${this.denominateur/pgcd}</mn>
             </mfrac>
         `
-        return `<math display="block"><mrow>${pgcd==1?base:base+simplification}</mrow></frac>`
+        return `<math display="block"><mrow>${pgcd==1?base:base+simplification}</mrow></math>`
 	}
 }
 
@@ -121,7 +121,7 @@ class Somme2 {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {
@@ -257,7 +257,7 @@ class Somme2 {
                 <mn>${this.denominateur/pgcd}</mn>
             </mfrac>
         `
-        return `<math display="block"><mrow>${pgcd==1?base:base+simplification}</mrow></frac>`
+        return `<math display="block"><mrow>${pgcd==1?base:base+simplification}</mrow></math>`
 	}
 }
 
@@ -296,7 +296,7 @@ class Somme3 {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {
@@ -335,7 +335,7 @@ class Somme4 {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {

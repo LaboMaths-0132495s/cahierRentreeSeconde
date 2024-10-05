@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <link rel="stylesheet" href="style.css">
+		<html lang="fr">
+    </head>
+    <body>
+        <script src="commun.js"></script>
+        <script src="../exercices/3.proportions.js"></script>
+		<div class="main">
+			<h1>Pourcentages et proportions</h1>
+			<fieldset>
+				<legend>Question 1</legend>
+				<form name="question1" id="question1"></form>
+				<script>
+					const F1 = document.getElementById("question1")
+					const Q1 = new PrendrePourcentage();
+					F1.innerHTML = '<div>' + Q1.htmlQuestion() + '</div>'
+						+ '<div><input type="submit" value="Vérifier"/><span class="verification" id="verdict1"></span></div>'
+						+ '<div><input type="button" value="Correction" id="button1"></div>'
+					F1.addEventListener("submit", event => {
+						event.preventDefault()
+						const span = document.getElementById("verdict1")
+						const verifier = Q1.verifier(Q1.formater_reponse_client())
+						span.textContent = verifier.message
+					})
+					document.getElementById("button1").addEventListener("click", event => {
+						const div = event.target.parentNode
+						div.innerHTML = Q1.htmlCorrection()
+					})
+				</script>
+			</fieldset>
+			<fieldset>
+				<legend>Question 2</legend>
+				<form name="question2" id="question2"></form>
+				<script>
+					const F2 = document.getElementById("question2")
+					const Q2 = new CalculerPourcentage();
+					F2.innerHTML = '<div>' + Q2.htmlQuestion() + '</div>'
+						+ '<div><input type="submit" value="Vérifier"/><span class="verification" id="verdict2"></span></div>'
+						+ '<div><input type="button" value="Correction" id="button2"></div>'
+					F2.addEventListener("submit", event => {
+						event.preventDefault()
+						const span = document.getElementById("verdict2")
+						const verifier = Q2.verifier(Q2.formater_reponse_client())
+						span.textContent = verifier.message
+					})
+					document.getElementById("button2").addEventListener("click", event => {
+						const div = event.target.parentNode
+						div.innerHTML = Q2.htmlCorrection()
+					})
+				</script>
+			</fieldset>
+			<fieldset>
+				<legend>Question 3</legend>
+				<form name="question3" id="question3"></form>
+				<script>
+					const F3 = document.getElementById("question3")
+					const Q3 = new EffectifTotal();
+					F3.innerHTML = '<div>' + Q3.htmlQuestion() + '</div>'
+						+ '<div><input type="submit" value="Vérifier"/><span class="verification" id="verdict3"></span></div>'
+						+ '<div><input type="button" value="Correction" id="button3"></div>'
+					F3.addEventListener("submit", event => {
+						event.preventDefault()
+						const span = document.getElementById("verdict3")
+						const verifier = Q3.verifier(Q3.formater_reponse_client())
+						span.textContent = verifier.message
+					})
+					document.getElementById("button3").addEventListener("click", event => {
+						const div = event.target.parentNode
+						div.innerHTML = Q3.htmlCorrection()
+					})
+				</script>
+			</fieldset>
+		</div>
+    </body>
+</html>

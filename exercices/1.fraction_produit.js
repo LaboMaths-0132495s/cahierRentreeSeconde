@@ -40,7 +40,7 @@ class Produit1 extends QuestionFraction {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {
@@ -94,7 +94,7 @@ class Produit2 extends QuestionFraction {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {
@@ -133,7 +133,7 @@ class Produit3 extends QuestionFraction {
                         <mrow><mn>${haut}</mn></mrow>
                         <mrow><mn>${bas}</mn></mrow>
                     </mfrac>
-                </mrow></frac>`
+                </mrow></math>`
 	}
 	
 	htmlCorrection() {
