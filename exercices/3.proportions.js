@@ -17,7 +17,16 @@ class PrendrePourcentage extends QuestionEntier {
 	
 	htmlCorrection() {
 	    // html correspondant à l'intitulé de la correction
-	    return "Correction à venir"
+	    return `<math><mrow>
+	    	<mfrac>
+	            <mrow><mn>${this.p}</mn></mrow>
+	            <mrow><mn>100</mn></mrow>
+	        </mfrac>
+	        <mo>&times;</mo>
+	        <mn>${this.Q}</mn>
+	        <mo>=</mo>
+	        <mn>${this.p*this.Q/100}</mn>
+    	</mrow></math>`
 	}
 }
 
@@ -47,7 +56,27 @@ class CalculerPourcentage extends QuestionEntier {
 	
 	htmlCorrection() {
 	    // html correspondant à l'intitulé de la correction
-	    return "Correction à venir"
+	    return [
+            `Dans cette entreprise, il y a <math><mrow><mn>${this.n}</mn><mo>+</mo><mn>${this.N-this.n}</mn><mo>=</mo><mn>${this.N}</mn></mrow></math> employés.<br/>
+	            <math><mrow>
+			    	<mfrac>
+			            <mrow><mn>${this.n}</mn></mrow>
+			            <mrow><mn>${this.N}</mn></mrow>
+			        </mfrac>
+			        <mo>=</mo>
+			        <mn>${this.n/this.N}</mn>
+		    	</mrow></math><br/>
+		    Dans cette entreprise, il y a <math><mn>${this.n/this.N*100}</mn><mo>%</mo></math> employées.`,
+            `<math><mrow>
+			    	<mfrac>
+			            <mrow><mn>${this.n}</mn></mrow>
+			            <mrow><mn>${this.N}</mn></mrow>
+			        </mfrac>
+			        <mo>=</mo>
+			        <mn>${this.n/this.N}</mn>
+		    	</mrow></math><br/>
+		    Dans ce club, il y a <math><mn>${this.n/this.N*100}</mn><mo>%</mo></math> d'adhérents anglais.`
+        ][this.variante]
 	}
 }
 
@@ -77,6 +106,33 @@ class EffectifTotal  extends QuestionEntier {
 	
 	htmlCorrection() {
 	    // html correspondant à l'intitulé de la correction
-	    return "Correction à venir"
+	    return [
+        	`<table style="border-collapse:collapse; text-align:center">
+        		<tr><td style="border: 1px solid black">${this.p}</td><td style="border: 1px solid black">&nbsp;${this.n}&nbsp;</td></tr>
+        		<tr><td style="border: 1px solid black">&nbsp;100&nbsp;</td><td style="border: 1px solid black">?</td></tr>
+        	</table>
+            	<math><mrow>
+			    	<mfrac>
+			            <mrow><mn>${this.n}</mn><mo>&times;</mo><mn>100</mn></mrow>
+			            <mrow><mn>${this.p}</mn></mrow>
+			        </mfrac>
+			        <mo>=</mo>
+			        <mn>${this.reponse}</mn>
+		    	</mrow></math><br/>
+		    Dans cette entreprise, il y a ${this.reponse} employés.`,
+            `<table style="border-collapse:collapse; text-align:center">
+        		<tr><td style="border: 1px solid black">${this.p}</td><td style="border: 1px solid black">&nbsp;${this.n}&nbsp;</td></tr>
+        		<tr><td style="border: 1px solid black">&nbsp;100&nbsp;</td><td style="border: 1px solid black">?</td></tr>
+        	</table>
+            	<math><mrow>
+			    	<mfrac>
+			            <mrow><mn>${this.n}</mn><mo>&times;</mo><mn>100</mn></mrow>
+			            <mrow><mn>${this.p}</mn></mrow>
+			        </mfrac>
+			        <mo>=</mo>
+			        <mn>${this.reponse}</mn>
+		    	</mrow></math><br/>
+		    Dans ce club, il y a ${this.reponse} adhérents.`
+        ][this.variante]
 	}
 }
