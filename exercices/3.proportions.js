@@ -2,7 +2,7 @@ class PrendrePourcentage extends QuestionEntier {
 	// prendre un pourcentage d'une quantité
 	constructor() {
 	    super()
-		while (!this.p || this.Q == 100 || !Number.isInteger(this.reponse)) {
+		while (this.p == undefined || this.Q == 100 || !Number.isInteger(this.reponse)) {
 		    this.p = randInt(1,99)
 		    this.Q = randInt(1,199)
 		    this.reponse = this.p * this.Q / 100
@@ -34,7 +34,7 @@ class CalculerPourcentage extends QuestionEntier {
 	// calculer un pourcentage
 	constructor() {
 	    super()
-		while (!this.n || this.N == 100 || !Number.isInteger(this.reponse)) {
+		while (this.n == undefined || this.N == 100 || !Number.isInteger(this.reponse)) {
 		    this.n = randInt(100,5000)
 		    this.N = randInt(this.n,9000)
 		    this.reponse = (this.n*100)/this.N
@@ -84,7 +84,7 @@ class EffectifTotal  extends QuestionEntier {
 	// calculer l'effectif total
 	constructor() {
 	    super()
-		while (!this.n || this.N == 100 || !Number.isInteger(this.reponse)) {
+		while (this.n == undefined || this.N == 100 || !Number.isInteger(this.reponse)) {
 		    this.n = randInt(100,5000)
 		    this.p = randInt(1,99)
 		    this.reponse = (this.n*100)/this.p
@@ -136,3 +136,4 @@ class EffectifTotal  extends QuestionEntier {
         ][this.variante]
 	}
 }
+

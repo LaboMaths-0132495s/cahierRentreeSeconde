@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <link rel="stylesheet" href="style.css">
+		<html lang="fr">
+    </head>
+    <body>
+        <script src="commun.js"></script>
+        <script src="reperes.js"></script>
+        <script src="../exercices/2.reperage.js"></script>
+		<div class="main">
+			<h1>Repérage</h1>
+			<fieldset>
+				<legend>Question 1</legend>
+				<div id="repere1" style="text-align:center;"></div>
+				<form name="question1" id="question1"></form>
+				<script>
+					const F1 = document.getElementById("question1")
+					const Q1 = new LireCoordonnees();
+					const repere1 = new Repere(-6,-6,6,6)
+					document.getElementById("repere1").appendChild(repere1.canvas)
+					repere1.dessinerGrille(1,1)
+					repere1.dessinerAxes()
+					repere1.graduerAxes(1,1)
+					if (Q1.x == 0) {repere1.dessinerPoint(repere1.point(Q1.x,Q1.y), "P", "E")}
+					else if (Q1.y == -1) {repere1.dessinerPoint(repere1.point(Q1.x,Q1.y), "P", "S")}
+					else {repere1.dessinerPoint(repere1.point(Q1.x,Q1.y), "P", "N")}
+					F1.innerHTML = '<div>' + Q1.htmlQuestion() + '</div>'
+						+ '<div><input type="submit" value="Vérifier"/><span class="verification" id="verdict1"></span></div>'
+						+ '<div><input type="button" value="Correction" id="button1"></div>'
+					F1.addEventListener("submit", event => {
+						event.preventDefault()
+						const span = document.getElementById("verdict1")
+						const verifier = Q1.verifier(Q1.formater_reponse_client())
+						span.textContent = verifier.message
+					})
+					document.getElementById("button1").addEventListener("click", event => {
+						const div = event.target.parentNode
+						div.innerHTML = Q1.htmlCorrection()
+					})
+				</script>
+			</fieldset>
+			<fieldset>
+				<legend>Question 2</legend>
+				<div id="repere2" style="text-align:center;"></div>
+				<form name="question2" id="question2"></form>
+				<script>
+					const F2 = document.getElementById("question2")
+					const Q2 = new PlacerPoint();
+					const repere2 = new Repere(-6,-6,6,6)
+					document.getElementById("repere2").appendChild(repere2.canvas)
+					repere2.dessinerGrille(1,1)
+					repere2.dessinerAxes()
+					repere2.graduerAxes(1,1)
+					repere2.laisserChoisirPoint("P")
+					F2.innerHTML = '<div>' + Q2.htmlQuestion() + '</div>'
+						+ '<div><input type="submit" value="Vérifier"/><span class="verification" id="verdict2"></span></div>'
+						+ '<div><input type="button" value="Correction" id="button2"></div>'
+					F2.addEventListener("submit", event => {
+						event.preventDefault()
+						const span = document.getElementById("verdict2")
+						const verifier = Q2.verifier(Q2.formater_reponse_client(repere2))
+						span.textContent = verifier.message
+					})
+					document.getElementById("button2").addEventListener("click", event => {
+						const div = event.target.parentNode
+						div.innerHTML = Q2.htmlCorrection()
+					})
+				</script>
+			</fieldset>
+		</div>
+    </body>
+</html>

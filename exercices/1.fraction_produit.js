@@ -3,7 +3,7 @@ class Produit1 extends QuestionFraction {
 	// a/b x c/d 
 	constructor() {
         super()
-		while (!this.a || this.b == 1 || this.d == 1 || this.a == this.d || this.c == this.b || this.a == this.c || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.b == 1 || this.d == 1 || this.a == this.d || this.c == this.b || this.a == this.c || this.numerateur%this.denominateur == 0) {
             this.a = 1
             this.b = 1
             for (let P of [[2, 3], [3, 2], [5, 1], [7, 1]]) {
@@ -37,8 +37,8 @@ class Produit1 extends QuestionFraction {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -54,7 +54,7 @@ class Produit2 extends QuestionFraction {
 	// a/b x c/d 
 	constructor() {
         super()
-		while (!this.a || this.b == 1 || this.d == 1 || this.a == this.d || this.c == this.b || this.a == this.c || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.b == 1 || this.d == 1 || this.a == this.d || this.c == this.b || this.a == this.c || this.numerateur%this.denominateur == 0) {
             this.a = 1
             this.b = 1
             this.c = 1
@@ -91,8 +91,8 @@ class Produit2 extends QuestionFraction {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -108,7 +108,7 @@ class Produit3 extends QuestionFraction {
 	// a x b/d
 	constructor() {
         super()
-		while (!this.a || PGCD(this.b,this.d)>1 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || PGCD(this.b,this.d)>1 || this.numerateur%this.denominateur == 0) {
             this.a = randInt(2, 9)
             this.b = randInt(1, 9)
             this.d = randInt(2, 9)
@@ -130,8 +130,8 @@ class Produit3 extends QuestionFraction {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}

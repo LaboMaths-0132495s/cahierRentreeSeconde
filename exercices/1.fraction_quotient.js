@@ -3,7 +3,7 @@ class Quotient1 extends QuestionFraction {
 	// (a/b)/c
 	constructor() {
         super()
-		while (!this.a || this.a%this.b == 0 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.a%this.b == 0 || this.numerateur%this.denominateur == 0) {
             this.a = randInt(2, 9)
             this.b = randInt(2, 9)
             this.c = randInt(2, 9)
@@ -28,8 +28,8 @@ class Quotient1 extends QuestionFraction {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -45,7 +45,7 @@ class Quotient2 extends QuestionFraction {
 	// a/(b/c)
 	constructor() {
         super()
-		while (!this.a || this.b%this.c == 0 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.b%this.c == 0 || this.numerateur%this.denominateur == 0) {
             this.a = randInt(2, 9)
             this.b = randInt(2, 9)
             this.c = randInt(2, 9)
@@ -70,8 +70,8 @@ class Quotient2 extends QuestionFraction {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -87,7 +87,7 @@ class Quotient3 extends QuestionFraction {
 	// (a/b)/(c/d)
 	constructor() {
         super()
-		while (!this.a || this.a%this.b == 0 || this.c%this.d == 0 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.a%this.b == 0 || this.c%this.d == 0 || this.numerateur%this.denominateur == 0) {
             this.a = randInt(2, 9)
             this.b = randInt(2, 9)
             this.c = randInt(2, 9)
@@ -118,8 +118,8 @@ class Quotient3 extends QuestionFraction {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}

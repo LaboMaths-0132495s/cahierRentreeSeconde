@@ -41,6 +41,33 @@ class QuestionEntier {
 	}
 }
 
+class QuestionDeuxEntier {
+    // classe générique permettant le contrôle du résultat lorsqu'il s'agît de deux entiers
+	constructor() {
+		this.inputX = 'x' + Math.random()
+		this.inputY = 'y' + Math.random()
+	}
+	
+	formater_reponse_client() {
+	    // formate la réponse côté client (entrainement seulement)
+	    return {
+	        x: parseInt(document.getElementsByName(this.inputX)[0].value),
+	        y: parseInt(document.getElementsByName(this.inputY)[0].value),
+	    }
+	}
+	
+	verifier(reponse) {
+        // vérifier si la réponse donnée (formaté dans un objet) est bonne
+        if (!Number.isInteger(reponse.x) || !Number.isInteger(reponse.y)) {
+            return {verdict: false, message: "Les réponses à cette question sont deux nombres entiers."}
+        }
+	    if (reponse.x == this.x && reponse.y == this.y) {
+            return {verdict: true, message: "Vrai"}
+	    }
+		return {verdict: false, message: "Faux"}
+	}
+}
+
 class QuestionFraction {
     // classe générique permettant le contrôle du résultat lorsqu'il s'agît d'une fraction
 	constructor() {

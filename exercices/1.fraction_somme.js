@@ -3,7 +3,7 @@ class Somme1 {
 	// a/d + b/d
 	constructor() {
 		this.operation = choice([-1, 1])
-		while (!this.a || this.a == this.b || PGCD(this.a, this.d)>1 || PGCD(this.b, this.d)>1 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.a == this.b || PGCD(this.a, this.d)>1 || PGCD(this.b, this.d)>1 || this.numerateur%this.denominateur == 0) {
 		    this.a = randInt(1,15)
 		    this.b = randInt(1,15)
 		    this.d = randInt(2,15)
@@ -28,8 +28,8 @@ class Somme1 {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -92,7 +92,7 @@ class Somme2 {
 	constructor() {
 		this.operation = choice([-1, 1])
 		this.echangeTermes = choice([true, false])
-		while (!this.a || PGCD(this.a, this.d)>1 || PGCD(this.b, this.d*this.m)>1 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || PGCD(this.a, this.d)>1 || PGCD(this.b, this.d*this.m)>1 || this.numerateur%this.denominateur == 0) {
 		    this.a = randInt(1,15)
 		    this.b = randInt(1,15)
 		    this.d = randInt(2,10)
@@ -118,8 +118,8 @@ class Somme2 {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -177,8 +177,8 @@ class Somme2 {
                 </mfrac>
                 <mo>=</mo>
                 <mfrac>
-                    <mrow><mn>${this.a*this.m + this.operation*this.b}</mn></mrow>
-                    <mrow><mn>${this.d*this.m}</mn></mrow>
+                    <mn>${this.a*this.m + this.operation*this.b}</mn>
+                    <mn>${this.d*this.m}</mn>
                 </mfrac>
             `
 	    } else {
@@ -231,8 +231,8 @@ class Somme2 {
                 </mfrac>
                 <mo>=</mo>
                 <mfrac>
-                    <mrow><mn>${this.b + this.operation*this.a*this.m}</mn></mrow>
-                    <mrow><mn>${this.d*this.m}</mn></mrow>
+                    <mn>${this.b + this.operation*this.a*this.m}</mn>
+                    <mn>${this.d*this.m}</mn>
                 </mfrac>
             `
 	    }
@@ -266,7 +266,7 @@ class Somme3 {
 	// a/(d*m) +- b/(d*n) avec m et n premiers entre eux
 	constructor() {
 		this.operation = choice([-1, 1])
-		while (!this.a || this.m == this.n || PGCD(this.a, this.d*this.m)>1 || PGCD(this.b, this.d*this.n)>1 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || this.m == this.n || PGCD(this.a, this.d*this.m)>1 || PGCD(this.b, this.d*this.n)>1 || this.numerateur%this.denominateur == 0) {
             this.a = randInt(1, 10)
             this.b = randInt(1, 15)
             this.d = randInt(1, 5)
@@ -293,8 +293,8 @@ class Somme3 {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
@@ -310,7 +310,7 @@ class Somme4 {
 	// a +- b/d 
 	constructor() {
 		this.operation = choice([-1, 1])
-		while (!this.a || PGCD(this.b, this.d)>1 || this.numerateur%this.denominateur == 0) {
+		while (this.a == undefined || PGCD(this.b, this.d)>1 || this.numerateur%this.denominateur == 0) {
             this.a = randInt(1, 9)
             this.b = randInt(1, 15)
             this.d = randInt(2, 10)
@@ -332,8 +332,8 @@ class Somme4 {
                     </mfrac>
                     <mo>=</mo>
                     <mfrac>
-                        <mrow><mn>${haut}</mn></mrow>
-                        <mrow><mn>${bas}</mn></mrow>
+                        <mn>${haut}</mn>
+                        <mn>${bas}</mn>
                     </mfrac>
                 </mrow></math>`
 	}
